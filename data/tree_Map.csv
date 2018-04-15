@@ -1,0 +1,57 @@
+Area,type,cusine,count
+East,Asian,Vietnamese,37
+East,Asian,Thai,106
+East,European,Spanish,16
+East,North_American,Southern,8
+East,European,Portuguese,2
+East,Asian,Persian/Iranian,2
+East,Asian,Pakistani,19
+East,European,Modern European,17
+East,Asian,Middle Eastern,89
+East,Latin_American,Mexican,437
+East,European,Mediterranean,130
+East,Asian,Lebanese,18
+East,Latin_American,Latin American,61
+East,Asian,Korean,21
+East,Asian,Japanese,149
+East,European,Italian,549
+East,European,Irish,32
+East,Asian,Indian,80
+East,North_American,Hawaiian,3
+East,European,Greek,74
+East,European,German,19
+East,European,French,37
+East,Asian,Filipino,3
+East,Asian,Chinese,923
+East,Latin_American,Caribbean,24
+East,European,British,6
+East,North_American,American (Traditional),1213
+East,North_American,American (New),655
+West,Asian,Vietnamese,235
+West,Asian,Thai,354
+West,European,Spanish,48
+West,North_American,Southern,131
+West,European,Portuguese,2
+West,Asian,Persian/Iranian,41
+West,Asian,Pakistani,61
+West,European,Modern European,29
+West,Asian,Middle Eastern,173
+West,Latin_American,Mexican,2525
+West,European,Mediterranean,478
+West,Asian,Lebanese,24
+West,Latin_American,Latin American,174
+West,Asian,Korean,195
+West,Asian,Japanese,720
+West,European,Italian,1326
+West,European,Irish,46
+West,Asian,Indian,193
+West,North_American,Hawaiian,236
+West,European,Greek,286
+West,European,German,20
+West,European,French,141
+West,Asian,Filipino,100
+West,Asian,Chinese,1151
+West,Latin_American,Caribbean,76
+West,European,British,23
+West,North_American,American (Traditional),2455
+West,North_American,American (New),1859

@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/d3.js"></script>
+    <script src="js/d3plus.js"></script>
+    <script src="js/queue.v1.min.js"></script>
+    <script src="js/d3.tip.v0.6.3.js"></script>
+    <script src="js/cloud.js"></script>
+    <style type="text/css">
+    body {
+        font-family: : sans-serif;
+        /*background-color: #21142b;*/
+    }
+
+    .slide {
+        position: absolute;
+        border-radius: 25px;
+        top: calc(10%);
+        width: calc(100% - 100px);
+        height: calc(80%);
+        background-color: #fff;
+        box-shadow: 0 6px 16px -6px black;
+        padding: 50px 60px 30px 60px;
+        left: -100%;
+        transition: all 0.5s;
+        box-sizing: border-box;
+        z-index: 2100;
+        overflow: scroll;
+    }
+
+    .slide.active {
+        left: 50px;
+    }
+
+
+    .close {
+
+        display: inline-block;
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        width: 0.75em;
+        height: 0.75em;
+        position: absolute;
+        top: -0px;
+        left: 0px;
+        border: none;
+        -webkit-border-radius: 1em;
+        border-radius: 1em;
+        font: normal 8em/normal Arial, Helvetica, sans-serif;
+        color: rgba(0, 0, 0, 1);
+        -o-text-overflow: clip;
+        text-overflow: clip;
+        background: #1abc9c;
+        -webkit-transform: rotateZ(471.54426539266757deg);
+        transform: rotateZ(471.54426539266757deg);
+    }
+
+
+    .close::before {
+        display: inline-block;
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        width: 0.45em;
+        height: 0.1em;
+        position: absolute;
+        content: "";
+        top: 0.33em;
+        left: 0.155em;
+        border: none;
+        font: normal 100%/normal Arial, Helvetica, sans-serif;
+        color: rgba(0, 0, 0, 1);
+        -o-text-overflow: clip;
+        text-overflow: clip;
+        background: #ffffff;
+        text-shadow: none;
+        -webkit-transform: rotateZ(24.064227395494576deg);
+        transform: rotateZ(24.064227395494576deg);
+    }
+
+    .close::after {
+        display: inline-block;
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        width: 0.45em;
+        height: 0.1em;
+        position: absolute;
+        content: "";
+        top: 0.33em;
+        left: 0.155em;
+        border: none;
+        font: normal 100%/normal Arial, Helvetica, sans-serif;
+        color: rgba(0, 0, 0, 1);
+        -o-text-overflow: clip;
+        text-overflow: clip;
+        background: #ffffff;
+        text-shadow: none;
+        -webkit-transform: rotateZ(-66.46310423517549deg);
+        transform: rotateZ(-66.46310423517549deg);
+    }
+
+    .close:hover {
+        opacity: 0.8;
+    }
+
+    .slide_item {
+        width: 100%;
+    }
+
+    .slide_header {
+        text-align: center;
+        font-weight: bold;
+        font-size: 30px;
+        border-bottom: double;
+        margin-bottom: 30px;
+    }
+
+    .slide_content {
+        text-align: left;
+        font-size: 20px;
+        width: 100%;
+    }
+
+    #slide_content_container {
+        height: 80%;
+    }
+
+    #slide_content_container>div {
+        width: 100%;
+        /*height: 100%;*/
+    }
+
+    .d3plus_message_text {
+        font-size: 20px;
+    }
+
+
+    .tree_chart {
+        display: inline-block;
+        border: 10px solid white;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    .wc {
+        border: 2px dotted black;
+        box-sizing: border-box;
+    }
+
+    .axis--x path {
+    display: none;
+    }
+
+    .line {
+        fill: none;
+        stroke-width: 3px;
+    }
+
+    .d3-tip {
+        line-height: 1;
+        font-weight: bold;
+        padding: 12px;
+        background: indianred;
+        color: #fff;
+        border-radius: 2px;
+        z-index: 3000;
+    }
+
+    .d3-tip:after {
+        box-sizing: border-box;
+        display: inline;
+        font-size: 10px;
+        width: 100%;
+        line-height: 1;
+        color: indianred;
+        content: "\25BC";
+        position: absolute;
+        text-align: center;
+    }
+    /* Style northward tooltips differently */
+
+    .d3-tip.n:after {
+        margin: -1px 0 0 0;
+        top: 100%;
+        left: 0;
+    }
+
+    </style>
+</head>
+
+<body>
+    <div id='container' style='height:90vh'>
+        <div class='slide'>
+            <div id='slide_close' class="close"></div>
+            <div id='slide_header_id' class='slide_item slide_header'></div>
+            <div id='slide_content_container' class='slide_item slide_content'>
+                <div id='bar_container'>
+                    <center><h3>Average Rating for Each state</h3></center>
+                    <div id='average_plot'></div>
+                </div>
+                <div id='wc_container '>
+                    <!-- <div style='text-align:center; margin:20px 0px;font-size:22px; '>Weighed Terms for Each State</div> -->
+                    <center><h3>Weighed Terms for Each State</h3></center>
+                    <div style='display:flex ' style='height:calc(100% - 80px); ' '>
+                        <div id="chart_0" class='wc wc_east' style='width:33.33%;height:50vh'></div>
+                        <div id="chart_1" class='wc wc_east' style='width:33.33%;height:50vh'></div>
+                        <div id="chart_2" class='wc wc_east' style='width:33.33%;height:50vh'></div>
+                    </div>
+                    <div style='display:flex'>
+                        <div id="chart_3" class='wc wc_west' style='width:33.33%;height:50vh'></div>
+                        <div id="chart_4" class='wc wc_west' style='width:33.33%;height:50vh'></div>
+                        <div id="chart_5" class='wc' style='width:33.33%;height:50vh'></div>
+                    </div>
+                    <div style='display:flex'>
+                        <div id="chart_6" class='wc wc_west' style='width:33.33%;height:50vh'></div>
+                        <div id="chart_7" class='wc wc_west' style='width:33.33%;height:50vh'></div>
+                        <div id="chart_8" class='wc' style='width:33.33%;height:50vh'></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <center>
+            <h1>This is the title</h1></center>
+        <div id='tree_container' style='width:100%;display:flex;height:100%'>
+            <div id='tree_west_s' class='tree_chart' style="width:35%;">
+                <center>
+                    <h1>The West</h1></center>
+                <div id='tree_west' class='tree_element' style='height:90%;'></div>
+            </div>
+            <div id='tree_east_s' class='tree_chart' style="width:35%;">
+                <center>
+                    <h1>The East</h1></center>
+                <div id='tree_east' class='tree_element' style='height:90%;'></div>
+            </div>
+            <div id='demogrphic_graph_container' class='tree_chart' style='width:30%;border-left: 2px dashed gray;'>
+                <center>
+                    <h1 style='height:10%'>Demo vs Restaurant</h1></center>
+                <div id='demogrphic_graph' style='height:90%;'></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    //Width and height of map
+    var width = document.getElementById('tree_west').offsetWidth;
+    var height = width * 0.8 < window.innerHeight - 50 ? width * 0.8 : (window.innerHeight - 50);
+
+    // defind color
+    var low_Color = '#f1eef6'
+    var high_Color = '#08519c'
+
+    // save global variables
+    var global_demographic_data;
+    var global_tree_data;
+    var global_color_scale = {};
+    var global_wc_data;
+    var global_avg_data;
+
+    //close buttons click listener
+    document.getElementById('slide_close').addEventListener('click', function(d) {
+        document.getElementsByClassName('slide')[0].classList.remove('active')
+        $('.wc').empty();
+        $('#average_plot').empty();
+    })
+
+    //start reading data
+    queue()
+        .defer(d3.csv, "data/tree_Map.csv")
+        .defer(d3.csv, "data/demo_data.csv")
+        .defer(d3.csv, "data/tfidf_all.csv")
+        // .defer(d3.csv, "data/a1-burtin.csv")
+        .defer(d3.csv, "data/score.csv")
+        .await(draw_visualization);
+
+
+    // function for drawing
+    function draw_visualization(error, tree_data, demographic_data, wc_data, average_data) {
+        // formate data
+        tree_data.forEach(function(d, i) {
+            d.count = +d.count
+        });
+
+        demographic_data.forEach(function(d, i) {
+            d.Percentage = +d.Percentage
+        });
+        type_color = Array.from(new Set(tree_data.map(function(d) { return d.type }).concat(tree_data.map(function(d) { return d.cusine }))));
+        color_hex_list = ["#E08283", "#33435C", "#C6CC8B", "#674172", "#88BCD8", "#16A085", "#878787"];
+        for (var i = 0; i < type_color.length; i++) {
+            global_color_scale[type_color[i]] = color_hex_list[i % color_hex_list.length]
+        };
+
+        global_demographic_data = demographic_data;
+        global_tree_data = tree_data;
+        draw_treeMap(tree_data, "West", 'tree_west')
+        draw_treeMap(tree_data, "East", 'tree_east')
+
+        wc_data.forEach(function(d, i) { d.score = +d.score });
+        global_wc_data = wc_data;
+
+        average_data.forEach(function(d) { d.Avg_rating = +d.Avg_rating });
+        global_avg_data=average_data
+    }
+
+
+    jQuery.fn.d3Click = function() {
+        this.each(function(i, e) {
+            var evt = new MouseEvent("click", {
+                bubbles: true,
+                cancelable: true
+            });
+            e.dispatchEvent(evt);
+        });
+    };
+
+    function draw_treeMap(dataa_temp, Area, container) {
+        dataa = dataa_temp.filter(function(d) { return d.Area == Area })
+
+        var visualization = d3plus.viz()
+            .container("#" + container)
+            .data(dataa)
+            .type("tree_map")
+            .id(["type", "cusine"])
+            .size("count")
+            .color({
+                "scale": function(d) {
+                    return global_color_scale[d]
+                }
+            })
+            .labels({ "align": "left", "valign": "top" })
+            .mouse({
+                "click": function(d, viz) {
+                    if (viz.depth() == 1) {
+                        console.log(d.cusine)
+                        console.log('draw')
+                        //window.location.href = d.cusine + ".html";
+                        $('#slide_header_id').html('<h3>' + d.cusine + '</h3>')
+                        document.getElementsByClassName('slide')[0].classList.add('active')
+
+                        $('.wc').empty();
+                        $('#average_plot').empty();
+
+                        // draw word cloud
+                        var temp_data_wc = global_wc_data.filter(function(a) { return a.Res_Type == d.cusine })
+                        var unique = Array.from(new Set(temp_data_wc.map(function(a) { return a.state })));
+                        for (var i = 0; i < unique.length; i++) {
+                            // console.log('#chart_' + unique[i])
+                            drawWordCloudAll(unique[i], temp_data_wc, '#chart_' + i.toString())
+                        }
+                        //draw average rating plot
+                        var temp_data = global_avg_data.filter(function(a) { return a.Res_Type == d.cusine })
+                        draw_average(temp_data)
+                        return false
+                    }
+                    //$('#tree_east').find( "#d3plus_group_North_American_rect").d3Click();
+                    var active_id = '#d3plus_group_' + d['d3plus'].id;
+                    if ($('#tree_east').find(active_id)) {
+                        window.setTimeout(function() {
+                            var evt = new MouseEvent("click")
+                            var cb = $('#tree_east').find(active_id)[0];
+                            if (cb) cb.dispatchEvent(evt);
+
+                            var evt = new MouseEvent("click")
+                            var cb = $('#tree_west').find(active_id)[0];
+                            if (cb) cb.dispatchEvent(evt);
+
+                        }, 300);
+
+                    }
+                    return true
+                    $('#tree_east').find("#d3plus_group_North_American_rect").d3Click();
+                },
+                "over": function(d, viz) {
+                    var bar_input_type = typeof d.cusine == 'string' ? d.cusine : d.type;
+                    if (viz.depth() == 1) {
+                        draw_bar(bar_input_type)
+                    } else {
+                        draw_bar(bar_input_type)
+                    }
+                },
+                "out": function(d, viz) {
+                    $('#d3plus_tooltip_id_tree_map').css('visibility', 'hidden')
+                }
+            })
+            .title({ "total": true })
+            .title({ "total": { "font": { "size": 16 } } })
+            .title({ "total": { "prefix": "Number of Restaruant: " } })
+            .draw()
+    }
+
+    function draw_bar(input_type) {
+        document.getElementById('demogrphic_graph').innerHTML = "";
+        var data = global_demographic_data.filter(function(d) { return d.type == input_type })
+        var visualization = d3plus.viz()
+            .container("#demogrphic_graph")
+            .data(data)
+            .type("bar")
+            .id("data_source")
+            .x("Area")
+            .y("Percentage")
+            .title(input_type)
+            .draw()
+    }
+
+    function drawWordCloudAll(area, data, container) {
+
+        filter_data = data.filter(function(d) { return d.state == area });
+        var word_count = {};
+        for (var i = 0; i < filter_data.length; i++) {
+            var item = filter_data[i];
+            word_count[item.world] = item.score
+        }
+        drawWordCloud(word_count, container, area);
+
+    }
+
+    //drawWordCloud(text_string);
+    function drawWordCloud(word_count, container, area) {
+
+        var margin = { top: 20, right: 20, bottom: 20, left: 20 };
+        var svg_location = container;
+        var width = $(container).width();
+        var height = $(container).height();
+        var fill = d3.scale.category20();
+        var word_entries = d3.entries(word_count);
+        var xScale = d3.scale.linear()
+            .domain([0, d3.max(word_entries, function(d) {
+                return d.value;
+            })])
+            .range([10, 40]);
+
+        // add svg
+        var svg = d3.select(container)
+            .append("svg")
+            .attr('width', width + margin.left + margin.right)
+            .attr('height', height + margin.top + margin.bottom);
+
+        var s = svg.append("g")
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        d3.layout.cloud()
+            .size([width, height])
+            .timeInterval(20)
+            .words(word_entries)
+            //.rotate(function() { return ~~(Math.random() * 2) * 90; })
+            //.rotate(function() { return (~~(Math.random() * 6) - 3) * 30; })
+            .rotate(function() { return 0; })
+            .font('monospace')
+            .fontSize(function(d) { return xScale(+d.value); })
+            .text(function(d) { return d.key; })
+            .spiral("archimedean")
+            .on("end", function(d) { draw(d, s) })
+            .start();
+
+        var textCenter = svg.append("text")
+            .attr("x", '50%')
+            .attr("y", '10%')
+            .attr('font-size', '35px')
+            .attr("text-anchor", "middle")
+            .text(area);
+
+
+        function draw(words, s) {
+
+            var fill_color = ["#66c2a5", "#fc8d62", "#8da0cb", "#e78ac3", "#a6d854"]
+
+            var cloud = s.append("g")
+                .attr("transform", "translate(" + [width >> 1, height >> 1] + ")")
+                .selectAll("text")
+                .data(words);
+
+            cloud.enter().append("text")
+                .attr("class", "wc_text")
+                .style("font-size", 1)
+                .style("font-family", "Impact")
+                .attr("fill", function(d, i) { return fill_color[i % fill_color.length]; })
+                .attr("text-anchor", "middle")
+                .text(function(d) { return d.key; })
+                .on("mouseover", function(d) {
+                    var word = this.innerHTML;
+                    d3.selectAll('.wc_text')
+                        .attr("transform", function(d) {
+                            return d.key == word ? "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")scale(2)" : "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                        })
+                        .attr('fill', function(d) {
+                            return d.key == word ? 'red' : 'grey'
+                        })
+
+                })
+                .on("mouseout", function(d) {
+                    d3.selectAll('.wc_text')
+                        .attr("transform", function(d) { return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")"; })
+                        .attr("fill", function(d, i) { return fill_color[i % fill_color.length]; })
+
+                })
+
+            //animation
+            cloud
+                .transition()
+                .duration(1500)
+                .style("font-size", function(d) { return xScale(d.value) + "px"; })
+                .attr("transform", function(d) { return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")"; })
+                .style("fill-opacity", 1);
+
+        }
+
+        d3.layout.cloud().stop();
+    }
+
+    function draw_average(data) {
+
+        var margin = { top: 100, right: 20, bottom: 250, left: 90 },
+            width = $("#average_plot").width()-200,
+            height = width*0.3;
+
+
+        var svg = d3.select("#average_plot").append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+
+        var x = d3.scale.linear().rangeRound([0, width]),
+            y = d3.scale.linear().rangeRound([height, 0]);
+
+
+        var g = svg.append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        var color = ['#CD5C5C', '#5CCC5C', '#5C5CCC']
+
+        data.sort(function(a, b) { return b.Avg_rating - a.Avg_rating; })
+        data.forEach(function(d, i) { d.index = i + 1 });
+
+
+        var tip = d3.tip()
+            .attr('class', 'd3-tip')
+            .offset([-10, 0])
+            .html(function(d) {
+                return "<div><h2>"+d.State+"</h2></div><div><p>Number of Review: "+d.Num_review+"<br>Average Rating: "+d.Avg_rating+"</p></div>"
+            });
+        g.call(tip);
+
+
+        var line = d3.svg.line()
+            .x(function(d) { return x(d.index); })
+            .y(function(d) { return y(d.Avg_rating); })
+
+        var tempp=data.map(function(d){return d.Avg_rating});
+        x.domain([0, data.length+1]);
+        y.domain([Math.floor(d3.min(tempp)), Math.ceil(d3.max(tempp))]);
+
+        g.append("g")
+            .attr("class", "axis axis--x")
+            .attr("transform", "translate(0," + height + ")")
+            .call(d3.svg.axis().scale(x).orient("bottom").ticks(data.length+1).tickFormat(function(d, i) {
+                if (i == 0) { return "" }
+                if (i > data.length) { return "" }
+                return data[i - 1].State + ' -'
+            }))
+            //.call(d3.svg.axis().scale(x).orient("bottom").ticks(16))
+            .selectAll("text")
+            .attr("y", 0)
+            .attr("x", 9)
+            .attr("dy", ".35em")
+            .style("text-anchor", "end")
+            .style("font-size", "20px")
+            .attr("transform", "rotate(-60)");
+
+
+
+        g.append("g")
+            .attr("class", "axis axis--y")
+            .call(d3.svg.axis().scale(y).orient("left"))
+            .append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 20)
+            .attr("x", 9)
+            .attr("dy", ".10em")
+            .style("text-anchor", "end")
+            .style("font-size", "20px")
+            .text("Average Review Rating");
+
+
+        g.append("path")
+            .datum(data)
+            .attr("class", "line")
+            .attr("d", line)
+            .style('stroke', color[0]);
+
+
+        g.selectAll("circle1")
+            .data(data)
+            .enter().append("circle")
+            .attr("class", "circle1")
+            .attr("cx", function(d) { return x(d.index); })
+            .attr("cy", function(d) { return y(d.Avg_rating); })
+            .attr("r", 10)
+            .attr('fill', color[0])
+            .on('mouseover',tip.show)
+            .on('mouseout', tip.hide);
+
+
+
+    }
+    </script>
+</body>
+
+</html>

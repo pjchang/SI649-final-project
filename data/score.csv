@@ -1,0 +1,194 @@
+Res_Type,Big_Res_type,State,Avg_rating,Num_review
+American (New),North_American,Arizona,3.863312536,135594
+American (New),North_American,Illinois,3.5417322835,2540
+American (New),North_American,Nevada,3.7425997243,140738
+American (New),North_American,North Carolina,3.6570818156,28552
+American (New),North_American,Ohio,3.6947727785,31049
+American (New),North_American,Pennsylvania,3.6675696993,29161
+American (New),North_American,South Carolina,3.5,296
+American (New),North_American,Wisconsin,3.8076327534,10979
+American (Traditional),North_American,Arizona,3.5907604801,133968
+American (Traditional),North_American,Illinois,3.4595577946,3573
+American (Traditional),North_American,Nevada,3.61554395,147247
+American (Traditional),North_American,New York,3.25,20
+American (Traditional),North_American,North Carolina,3.4817055786,31567
+American (Traditional),North_American,Ohio,3.4987625374,30708
+American (Traditional),North_American,Pennsylvania,3.5566229521,25087
+American (Traditional),North_American,South Carolina,3.4454061252,1502
+American (Traditional),North_American,Wisconsin,3.5287958115,13179
+British,European,Arizona,4.1295313882,4524
+British,European,Nevada,3.6288348434,6291
+British,European,North Carolina,3.7890295359,474
+British,European,Ohio,3.2959641256,223
+British,European,Pennsylvania,4.2986666667,375
+British,European,South Carolina,3.5631067961,103
+British,European,Wisconsin,3.8214285714,56
+Caribbean,Latin_American,Arizona,3.8493817909,2669
+Caribbean,Latin_American,Illinois,4.8026315789,76
+Caribbean,Latin_American,Nevada,3.9400941378,2337
+Caribbean,Latin_American,North Carolina,3.6556847545,1548
+Caribbean,Latin_American,Ohio,3.7891891892,370
+Caribbean,Latin_American,Pennsylvania,3.9890219561,1002
+Caribbean,Latin_American,Wisconsin,3.7536231884,207
+Chinese,Asian,Arizona,3.5066836735,39200
+Chinese,Asian,Illinois,3.5993091537,1737
+Chinese,Asian,Nevada,3.4794559152,53227
+Chinese,Asian,North Carolina,3.4336245167,6983
+Chinese,Asian,Ohio,3.4369586141,6234
+Chinese,Asian,Pennsylvania,3.5553075743,7169
+Chinese,Asian,South Carolina,4.0155844156,385
+Chinese,Asian,Wisconsin,3.4733558617,3847
+Filipino,Asian,Arizona,3.8872506505,1153
+Filipino,Asian,Nevada,3.4942321557,5548
+Filipino,Asian,Ohio,4.1020408163,49
+Filipino,Asian,Pennsylvania,4.0909090909,22
+Filipino,Asian,Wisconsin,3.4444444444,36
+French,European,Arizona,3.842786246,5642
+French,European,Illinois,3.6935483871,62
+French,European,Nevada,4.0865769744,29211
+French,European,North Carolina,4.0690448792,1738
+French,European,Ohio,4.1566384883,2011
+French,European,Pennsylvania,4.1985125858,1748
+French,European,South Carolina,3.1818181818,11
+French,European,Wisconsin,4.0481099656,873
+German,European,Arizona,3.8641078838,1928
+German,European,Illinois,3.8636363636,22
+German,European,Nevada,3.8849929874,2139
+German,European,North Carolina,4.1129707113,717
+German,European,Ohio,3.6148148148,810
+German,European,Pennsylvania,3.983171521,1545
+German,European,Wisconsin,3.9954929577,1775
+Greek,European,Arizona,3.9657395249,8377
+Greek,European,Illinois,3.5833333333,144
+Greek,European,Nevada,4.2188343656,6297
+Greek,European,North Carolina,3.7781211372,1618
+Greek,European,Ohio,3.8726163234,1311
+Greek,European,Pennsylvania,3.8168273444,1141
+Greek,European,Wisconsin,3.872870249,763
+Hawaiian,North_American,Arizona,4.0322622951,7625
+Hawaiian,North_American,Nevada,4.0554143366,15736
+Hawaiian,North_American,North Carolina,3.6758241758,182
+Hawaiian,North_American,Pennsylvania,4.2479338843,121
+Hawaiian,North_American,Wisconsin,4.2129032258,155
+Indian,Asian,Arizona,3.8358886996,10566
+Indian,Asian,Illinois,3.8174603175,630
+Indian,Asian,Nevada,4.006313856,8711
+Indian,Asian,North Carolina,3.6986964618,2685
+Indian,Asian,Ohio,3.869982238,2815
+Indian,Asian,Pennsylvania,3.7652679684,2407
+Indian,Asian,Wisconsin,3.9955588453,1351
+Irish,European,Arizona,3.6184971098,4325
+Irish,European,Illinois,3.4262295082,122
+Irish,European,Nevada,3.7596566524,3961
+Irish,European,North Carolina,3.6874391431,1027
+Irish,European,Ohio,3.483175151,1159
+Irish,European,Pennsylvania,3.4152249135,289
+Irish,European,Wisconsin,3.3976109215,586
+Italian,European,Arizona,3.8501580588,90789
+Italian,European,Illinois,3.4340062112,1288
+Italian,European,Kentucky,4.2,5
+Italian,European,Nevada,3.7392244342,80019
+Italian,European,North Carolina,3.6283444816,14352
+Italian,European,Ohio,3.6973845213,13076
+Italian,European,Pennsylvania,3.6755809425,15406
+Italian,European,South Carolina,3.1934900542,553
+Italian,European,Wisconsin,3.6415584416,5775
+Japanese,Asian,Arizona,3.7144569403,39213
+Japanese,Asian,Illinois,3.6752688172,930
+Japanese,Asian,Nevada,3.9964492709,81955
+Japanese,Asian,North Carolina,3.6509260395,8153
+Japanese,Asian,Ohio,3.6564462505,5414
+Japanese,Asian,Pennsylvania,3.5407024793,4840
+Japanese,Asian,South Carolina,3.1351351351,296
+Japanese,Asian,Wisconsin,3.6335551331,2104
+Korean,Asian,Arizona,3.7101449275,4899
+Korean,Asian,Illinois,3.5607594937,790
+Korean,Asian,Nevada,3.8923575571,17586
+Korean,Asian,North Carolina,3.8743202417,1655
+Korean,Asian,Ohio,4.003125,960
+Korean,Asian,Pennsylvania,3.8907284768,1208
+Korean,Asian,Wisconsin,3.5299455535,551
+Latin American,Latin_American,Arizona,4.0942780562,8581
+Latin American,Latin_American,Nevada,4.0553132089,5731
+Latin American,Latin_American,North Carolina,4.0093276331,2573
+Latin American,Latin_American,Ohio,4.1752913753,2145
+Latin American,Latin_American,Pennsylvania,4.2992845787,2516
+Latin American,Latin_American,South Carolina,3.679245283,159
+Latin American,Latin_American,Wisconsin,4.146373057,772
+Lebanese,Asian,Arizona,4.3065433855,1406
+Lebanese,Asian,Nevada,4.2697899838,619
+Lebanese,Asian,North Carolina,4.235059761,251
+Lebanese,Asian,Ohio,4.2882882883,555
+Lebanese,Asian,Pennsylvania,3.8811881188,101
+Mediterranean,European,Arizona,4.0091518837,15953
+Mediterranean,European,Illinois,3.8477690289,381
+Mediterranean,European,Nevada,4.0088487744,11301
+Mediterranean,European,North Carolina,3.9741833509,3796
+Mediterranean,European,Ohio,4.0849649058,2707
+Mediterranean,European,Pennsylvania,4.1222996516,2870
+Mediterranean,European,South Carolina,4.3726708075,161
+Mediterranean,European,Wisconsin,4.0041118421,1216
+Mexican,Latin_American,Arizona,3.6612595957,124405
+Mexican,Latin_American,Illinois,3.7694478033,2481
+Mexican,Latin_American,Nevada,3.678388466,81984
+Mexican,Latin_American,North Carolina,3.505857295,15024
+Mexican,Latin_American,Ohio,3.4986781229,12104
+Mexican,Latin_American,Pennsylvania,3.5711637038,9169
+Mexican,Latin_American,South Carolina,3.5324675325,385
+Mexican,Latin_American,Wisconsin,3.6085858586,5544
+Middle Eastern,Asian,Arizona,4.0213420148,5529
+Middle Eastern,Asian,Illinois,3.5394736842,76
+Middle Eastern,Asian,Nevada,4.1028037383,4922
+Middle Eastern,Asian,North Carolina,4.3425324675,1232
+Middle Eastern,Asian,Ohio,4.099302421,2437
+Middle Eastern,Asian,Pennsylvania,3.9880159787,1502
+Middle Eastern,Asian,Wisconsin,3.8349514563,103
+Modern European,European,Arizona,4.0872756933,1226
+Modern European,European,Nevada,4.4548192771,332
+Modern European,European,North Carolina,4.1013513514,740
+Modern European,European,Ohio,3.9645390071,282
+Modern European,European,Pennsylvania,4.0217391304,598
+Modern European,European,Wisconsin,3.9137055838,197
+Pakistani,Asian,Arizona,3.8826937002,1381
+Pakistani,Asian,Illinois,3.5161290323,62
+Pakistani,Asian,Nevada,3.6072727273,1375
+Pakistani,Asian,North Carolina,3.9046434494,1206
+Pakistani,Asian,Ohio,4.1958762887,388
+Pakistani,Asian,Pennsylvania,3.8805970149,469
+Pakistani,Asian,Wisconsin,3.9201331115,601
+Persian/Iranian,Asian,Arizona,4.1668956044,1456
+Persian/Iranian,Asian,Nevada,3.7807017544,456
+Persian/Iranian,Asian,North Carolina,3.5696202532,79
+Portuguese,European,Nevada,3.9266055046,545
+Portuguese,European,North Carolina,4.8333333333,12
+Portuguese,European,Ohio,3.7993421053,304
+Portuguese,European,Pennsylvania,3.7204610951,347
+Southern,North_American,Arizona,3.7536247222,9449
+Southern,North_American,Illinois,3.2109375,128
+Southern,North_American,Nevada,3.818376286,9817
+Southern,North_American,North Carolina,3.7893928535,9767
+Southern,North_American,Ohio,3.866720517,1238
+Southern,North_American,Pennsylvania,3.6603475513,633
+Southern,North_American,South Carolina,4.0986093552,791
+Southern,North_American,Wisconsin,4.0946745562,169
+Spanish,European,Arizona,3.7114285714,1050
+Spanish,European,Illinois,3.4379084967,306
+Spanish,European,Nevada,3.9676711527,6836
+Spanish,European,North Carolina,3.9187592319,677
+Spanish,European,Ohio,3.7555555556,45
+Spanish,European,Pennsylvania,3.8103044496,427
+Spanish,European,Wisconsin,3.6887417219,302
+Thai,Asian,Arizona,3.9772465693,22590
+Thai,Asian,Illinois,3.6886341929,1047
+Thai,Asian,Nevada,3.9678206084,29522
+Thai,Asian,North Carolina,3.7948974487,3998
+Thai,Asian,Ohio,3.9372435433,4143
+Thai,Asian,Pennsylvania,3.96273393,6145
+Thai,Asian,Wisconsin,3.8535198951,2287
+Vietnamese,Asian,Arizona,3.9750291555,14577
+Vietnamese,Asian,Illinois,3.843003413,293
+Vietnamese,Asian,Nevada,3.7268839404,13562
+Vietnamese,Asian,North Carolina,4.0381326554,4327
+Vietnamese,Asian,Ohio,3.9090909091,2035
+Vietnamese,Asian,Pennsylvania,3.8783185841,1356
+Vietnamese,Asian,Wisconsin,3.7857142857,574

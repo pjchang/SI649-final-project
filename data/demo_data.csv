@@ -1,0 +1,113 @@
+Area,type,data_source,Percentage
+East,Vietnamese,demography,2.40
+East,Thai,demography,0.00
+East,Spanish,demography,0.00
+East,Southern,demography,0.00
+East,Portuguese,demography,0.12
+East,Persian/Iranian,demography,0.47
+East,Pakistani,demography,0.00
+East,Modern European,demography,0.00
+East,Middle Eastern,demography,0.00
+East,Mexican,demography,23.25
+East,Mediterranean,demography,0.00
+East,Lebanese,demography,0.33
+East,Latin American,demography,39.13
+East,Korean,demography,2.40
+East,Japanese,demography,0.83
+East,Italian,demography,1.00
+East,Irish,demography,0.37
+East,Indian,demography,8.52
+East,Hawaiian,demography,0.02
+East,Greek,demography,0.00
+East,German,demography,2.47
+East,French,demography,0.53
+East,Filipino,demography,3.17
+East,Chinese,demography,5.67
+East,Caribbean,demography,4.72
+East,British,demography,2.53
+East,American (Traditional),demography,92.88
+East,American (New),demography,92.88
+West,Vietnamese,demography,1.95
+West,Thai,demography,0.00
+West,Spanish,demography,0.00
+West,Southern,demography,0.00
+West,Portuguese,demography,0.00
+West,Persian/Iranian,demography,0.65
+West,Pakistani,demography,0.00
+West,Modern European,demography,0.00
+West,Middle Eastern,demography,0.00
+West,Mexican,demography,47.40
+West,Mediterranean,demography,0.00
+West,Lebanese,demography,0.15
+West,Latin American,demography,58.95
+West,Korean,demography,1.55
+West,Japanese,demography,0.75
+West,Italian,demography,0.40
+West,Irish,demography,0.15
+West,Indian,demography,2.60
+West,Hawaiian,demography,0.50
+West,Greek,demography,0.00
+West,German,demography,1.55
+West,French,demography,0.30
+West,Filipino,demography,9.10
+West,Chinese,demography,3.55
+West,Caribbean,demography,3.00
+West,British,demography,1.65
+West,American (Traditional),demography,83.25
+West,American (New),demography,83.25
+East,Vietnamese,res_type,0.78
+East,Thai,res_type,2.24
+East,Spanish,res_type,0.34
+East,Southern,res_type,0.17
+East,Portuguese,res_type,0.04
+East,Persian/Iranian,res_type,0.04
+East,Pakistani,res_type,0.40
+East,Modern European,res_type,0.36
+East,Middle Eastern,res_type,1.88
+East,Mexican,res_type,9.24
+East,Mediterranean,res_type,2.75
+East,Lebanese,res_type,0.38
+East,Latin American,res_type,1.29
+East,Korean,res_type,0.44
+East,Japanese,res_type,3.15
+East,Italian,res_type,11.61
+East,Irish,res_type,0.68
+East,Indian,res_type,1.69
+East,Hawaiian,res_type,0.06
+East,Greek,res_type,1.56
+East,German,res_type,0.40
+East,French,res_type,0.78
+East,Filipino,res_type,0.06
+East,Chinese,res_type,19.51
+East,Caribbean,res_type,0.51
+East,British,res_type,0.13
+East,American (Traditional),res_type,25.65
+East,American (New),res_type,13.86
+West,Vietnamese,res_type,1.79
+West,Thai,res_type,2.70
+West,Spanish,res_type,0.37
+West,Southern,res_type,0.99
+West,Portuguese,res_type,0.02
+West,Persian/Iranian,res_type,0.31
+West,Pakistani,res_type,0.47
+West,Modern European,res_type,0.22
+West,Middle Eastern,res_type,1.32
+West,Mexican,res_type,19.27
+West,Mediterranean,res_type,3.65
+West,Lebanese,res_type,0.18
+West,Latin American,res_type,1.33
+West,Korean,res_type,1.49
+West,Japanese,res_type,5.50
+West,Italian,res_type,10.12
+West,Irish,res_type,0.35
+West,Indian,res_type,1.47
+West,Hawaiian,res_type,1.80
+West,Greek,res_type,2.18
+West,German,res_type,0.15
+West,French,res_type,1.08
+West,Filipino,res_type,0.76
+West,Chinese,res_type,8.78
+West,Caribbean,res_type,0.58
+West,British,res_type,0.19
+West,American (Traditional),res_type,18.74
+West,American (New),res_type,14.19
