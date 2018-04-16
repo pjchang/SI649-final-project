@@ -189,6 +189,9 @@
         top: 100%;
         left: 0;
     }
+    .wc_text:hover{
+        cursor:pointer;
+    }
 
     </style>
 </head>
@@ -197,7 +200,7 @@
     <div id='container' style='height:90vh'>
         <div class='slide'>
             <div id='slide_close' class="close"></div>
-            <div id='slide_header_id' class='slide_item slide_header'></div>
+            <div class='slide_item slide_header'><h3 id='slide_header_id' ></h3></div>
             <div id='slide_content_container' class='slide_item slide_content'>
                 <div id='bar_container'>
                     <center><h3>Average Rating for Each state</h3></center>
@@ -337,7 +340,7 @@
                         console.log(d.cusine)
                         console.log('draw')
                         //window.location.href = d.cusine + ".html";
-                        $('#slide_header_id').html('<h3>' + d.cusine + '</h3>')
+                        $('#slide_header_id').html(d.cusine )
                         document.getElementsByClassName('slide')[0].classList.add('active')
 
                         $('.wc').empty();
@@ -517,6 +520,10 @@
                         .attr("fill", function(d, i) { return fill_color[i % fill_color.length]; })
 
                 })
+                .on("click", function(d) {
+                    search_word=d.key+ ' '+ $('#slide_header_id').text()
+                    window.open('http://google.com/search?q='+search_word);
+                    })
 
             //animation
             cloud
@@ -589,8 +596,6 @@
             .style("font-size", "20px")
             .attr("transform", "rotate(-60)");
 
-
-
         g.append("g")
             .attr("class", "axis axis--y")
             .call(d3.svg.axis().scale(y).orient("left"))
@@ -602,8 +607,6 @@
             .style("text-anchor", "end")
             .style("font-size", "20px")
             .text("Average Review Rating");
-
-
 
     var path = g.append("path")
       .attr("d", line(data))
@@ -623,18 +626,18 @@
         .attr("stroke-dashoffset", 0);
 
 
-        g.selectAll("circle1")
-            .data(data)
-            .enter().append("circle")
-            .attr("class", "circle1")
-            .attr("cx", function(d) { return x(d.index); })
-            .attr("cy", function(d) { return y(d.Avg_rating); })
-            .attr("r", 10)
-            .style("stroke-width", 5)    // set the stroke width
-            .style("stroke", "white")
-            .attr('fill', color[0])
-            .on('mouseover',tip.show)
-            .on('mouseout', tip.hide);
+    g.selectAll("circle1")
+        .data(data)
+        .enter().append("circle")
+        .attr("class", "circle1")
+        .attr("cx", function(d) { return x(d.index); })
+        .attr("cy", function(d) { return y(d.Avg_rating); })
+        .attr("r", 10)
+        .style("stroke-width", 5) 
+        .style("stroke", "white")
+        .attr('fill', color[0])
+        .on('mouseover',tip.show)
+        .on('mouseout', tip.hide);
 
     }
     </script>
