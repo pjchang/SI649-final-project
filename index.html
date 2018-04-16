@@ -604,11 +604,23 @@
             .text("Average Review Rating");
 
 
-        g.append("path")
-            .datum(data)
-            .attr("class", "line")
-            .attr("d", line)
-            .style('stroke', color[0]);
+
+    var path = g.append("path")
+      .attr("d", line(data))
+      .attr("stroke", 'indianred')
+      .attr("stroke-width", "2")
+      .attr("fill", "none");
+
+    var totalLength = path.node().getTotalLength();
+
+    path
+      .attr("stroke-dasharray", totalLength + " " + totalLength)
+      .attr("stroke-dashoffset", totalLength)
+      .transition()
+        .delay(500)
+        .duration(1000)
+        .ease("linear")
+        .attr("stroke-dashoffset", 0);
 
 
         g.selectAll("circle1")
@@ -618,6 +630,8 @@
             .attr("cx", function(d) { return x(d.index); })
             .attr("cy", function(d) { return y(d.Avg_rating); })
             .attr("r", 10)
+            .style("stroke-width", 5)    // set the stroke width
+            .style("stroke", "white")
             .attr('fill', color[0])
             .on('mouseover',tip.show)
             .on('mouseout', tip.hide);
