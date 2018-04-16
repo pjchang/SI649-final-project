@@ -55,59 +55,75 @@ West,Caribbean,demography,3.00
 West,British,demography,1.65
 West,American (Traditional),demography,83.25
 West,American (New),demography,83.25
-East,Vietnamese,res_type,0.78
-East,Thai,res_type,2.24
-East,Spanish,res_type,0.34
-East,Southern,res_type,0.17
-East,Portuguese,res_type,0.04
-East,Persian/Iranian,res_type,0.04
-East,Pakistani,res_type,0.40
-East,Modern European,res_type,0.36
-East,Middle Eastern,res_type,1.88
-East,Mexican,res_type,9.24
-East,Mediterranean,res_type,2.75
-East,Lebanese,res_type,0.38
-East,Latin American,res_type,1.29
-East,Korean,res_type,0.44
-East,Japanese,res_type,3.15
-East,Italian,res_type,11.61
-East,Irish,res_type,0.68
-East,Indian,res_type,1.69
-East,Hawaiian,res_type,0.06
-East,Greek,res_type,1.56
-East,German,res_type,0.40
-East,French,res_type,0.78
-East,Filipino,res_type,0.06
-East,Chinese,res_type,19.51
-East,Caribbean,res_type,0.51
-East,British,res_type,0.13
-East,American (Traditional),res_type,25.65
-East,American (New),res_type,13.86
-West,Vietnamese,res_type,1.79
-West,Thai,res_type,2.70
-West,Spanish,res_type,0.37
-West,Southern,res_type,0.99
-West,Portuguese,res_type,0.02
-West,Persian/Iranian,res_type,0.31
-West,Pakistani,res_type,0.47
-West,Modern European,res_type,0.22
-West,Middle Eastern,res_type,1.32
-West,Mexican,res_type,19.27
-West,Mediterranean,res_type,3.65
-West,Lebanese,res_type,0.18
-West,Latin American,res_type,1.33
-West,Korean,res_type,1.49
-West,Japanese,res_type,5.50
-West,Italian,res_type,10.12
-West,Irish,res_type,0.35
-West,Indian,res_type,1.47
-West,Hawaiian,res_type,1.80
-West,Greek,res_type,2.18
-West,German,res_type,0.15
-West,French,res_type,1.08
-West,Filipino,res_type,0.76
-West,Chinese,res_type,8.78
-West,Caribbean,res_type,0.58
-West,British,res_type,0.19
-West,American (Traditional),res_type,18.74
-West,American (New),res_type,14.19
+East,Vietnamese,res_type,2.56
+East,Thai,res_type,7.33
+East,Persian/Iranian,res_type,0.14
+East,Pakistani,res_type,1.31
+East,Middle Eastern,res_type,6.15
+East,Lebanese,res_type,1.24
+East,Korean,res_type,1.45
+East,Japanese,res_type,10.30
+East,Filipino,res_type,0.21
+East,Chinese,res_type,63.79
+East,Indian,res_type,5.53
+East,Spanish,res_type,1.81
+East,Portuguese,res_type,0.23
+East,Modern European,res_type,1.93
+East,Mediterranean,res_type,14.74
+East,Italian,res_type,62.24
+East,Irish,res_type,3.63
+East,Greek,res_type,8.39
+East,German,res_type,2.15
+East,French,res_type,4.20
+East,British,res_type,0.68
+East,Southern,res_type,0.43
+East,Hawaiian,res_type,0.16
+East,American (Traditional),res_type,64.56
+East,American (New),res_type,34.86
+East,Mexican,res_type,83.72
+East,Latin American,res_type,11.69
+East,Caribbean,res_type,4.60
+West,Vietnamese,res_type,7.24
+West,Thai,res_type,10.90
+West,Persian/Iranian,res_type,1.26
+West,Pakistani,res_type,1.88
+West,Middle Eastern,res_type,5.33
+West,Lebanese,res_type,0.74
+West,Korean,res_type,6.01
+West,Japanese,res_type,22.17
+West,Indian,res_type,5.94
+West,Filipino,res_type,3.08
+West,Chinese,res_type,35.45
+West,Spanish,res_type,2.00
+West,Portuguese,res_type,0.08
+West,Modern European,res_type,1.21
+West,Mediterranean,res_type,19.92
+West,Italian,res_type,55.27
+West,Irish,res_type,1.92
+West,Greek,res_type,11.92
+West,German,res_type,0.83
+West,French,res_type,5.88
+West,British,res_type,0.96
+West,Southern,res_type,2.80
+West,American (Traditional),res_type,52.45
+West,American (New),res_type,39.71
+West,Hawaiian,res_type,5.04
+West,Mexican,res_type,90.99
+West,Latin American,res_type,6.27
+West,Caribbean,res_type,2.74
+East,Asian,res_type,30.01
+East,European,res_type,18.85
+East,North_American,res_type,39.93
+East,Latin_American,res_type,11.21
+West,Asian,res_type,24.78
+West,European,res_type,18.31
+West,North_American,res_type,35.73
+West,Latin_American,res_type,21.18
+East,Asian,demography,3.77
+East,European,demography,1.34
+East,North_American,demography,83.25
+East,Latin_American,demography,9.79
+West,Asian,demography,2.32
+West,European,demography,1.27
+West,North_American,demography,92.88
+West,Latin_American,demography,2.92
